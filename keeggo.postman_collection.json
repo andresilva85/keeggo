@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "cb9a3227-fecc-4097-80fb-fc081b493303",
+		"name": "keeggo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Marca",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status SUCESSO\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Verifica Marca Honda\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Honda\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api}}/make",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"make"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modelo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status SUCESSO\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Verifica Modelo City\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"City\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api}}/Model?MakeID=2",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"Model"
+					],
+					"query": [
+						{
+							"key": "MakeID",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Versao",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status SUCESSO\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{api}}/Version?ModelID=2",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"Version"
+					],
+					"query": [
+						{
+							"key": "ModelID",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Veiculos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status SUCESSO\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Verifica Veiculos\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Honda\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api}}/make",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"make"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
